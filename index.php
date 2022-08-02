@@ -1,39 +1,18 @@
-<?php require_once 'trainingFunction.php'; ?>
+<?php require_once 'trainingFunction.php';
+$db_array = dbPull();
+$date_array = getAllDates($db_array);
+?>
 <html lang = "en">
     <head>
         <title>Training Log</title>
     </head>
     <body>
         <header>
-            <h1 class="title_logo">Chalked</h1>
-            <h2 class="title_subheading">Check out your previous sessions below!</h2>
-            <p class="title_explanation">Scroll left to travel back in  time</p>
+            <h1 class="title_logo">Chalk it up!</h1>
+            <h2 class="title_subheading">Check out your previous sessions below:</h2>
         </header>
-        <main>
-            <div class="date_container">
-                <h2>2022-07-31</h2>
-                <div class="exercise_container">
-                    <h3>exercise1</h3>
-                    <p>50kg</p>
-                    <p>Hard work getting on it and trying hard.</p>
-                </div>
-                <div class="exercise_container">
-                        <h3>exercise2</h3>
-                        <p>50kg</p>
-                        <p>Hard work getting on it and trying hard.</p>
-                </div>
-                <div class="exercise_container">
-                    <h3>exercise3</h3>
-                    <p>50kg</p>
-                    <p>Hard work getting on it and trying hard.</p>
-                </div>
-                <div class="exercise_container">
-                    <h3>exercise4</h3>
-                    <p>50kg</p>
-                    <p>Hard work getting on it and trying hard.</p>
-                </div>
-
-            </div>
+        <main class="diary_container">
+            <?php perDateOutput($db_array, $date_array) ?>
         </main>
     </body>
 </html>
