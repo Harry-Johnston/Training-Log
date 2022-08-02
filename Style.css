@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+}
+
+.date_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
