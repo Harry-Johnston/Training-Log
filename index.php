@@ -4,6 +4,10 @@ $date_array = getAllDates($db_array);
 ?>
 <html lang = "en">
     <head>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
         <title>Training Log</title>
     </head>
     <body>
