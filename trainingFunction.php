@@ -13,23 +13,24 @@ function dbPull():array{
                  LIMIT 10;';
     $query = $db->prepare($queryString);
     $query->execute();
-
-    $allResults = $query->fetchAll();
-    return $allResults;
+    return $query->fetchAll();
 }
 
-function perDateOutput(array $db_array, array $date_array){
+function perDateOutput(array $db_array, array $date_array):string{
+    $output_string = '';
     foreach($date_array as $date) {
-        echo "<div class='date_container'><h2 class='date_text'>$date</h2>";
+        $per_date_string = "<div class='date_container'><h2 class='date_text'>$date</h2>";
         foreach ($db_array as $db_item) {
             if ($db_item['date'] === $date) {
                 $db_id = $db_item['id'] - 1;
                 $exercise_string = exerciseOutput($db_array, $db_id);
-                echo $exercise_string;
+                $per_date_string .= $exercise_string;
             }
         }
-        echo "</div>";
+        $per_date_string .= "</div>";
+        $output_string .= $per_date_string;
     }
+    return $output_string;
 }
 
 function getAllDates($db_array):array{

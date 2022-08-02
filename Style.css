@@ -8,17 +8,45 @@ html {
     font-size: 10px;
 }
 
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
 .title_logo {
     font-size: 3rem;
     font-family: 'Mouse Memoirs', sans-serif;
     color: #FFFFFF;
+
 }
 
 header {
     background-color: #a893ed;
+}
+
+.nav_button{
+    color: #FFFFFF;
+}
+
+.nav_bar {
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size:2rem;
+    text-decoration: none;
+}
+
+.title_block {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    border-bottom: solid black 5px;
+}
+.title_logo{
+    font-size: 5rem;
 }
 .diary_container {
     display: flex;
