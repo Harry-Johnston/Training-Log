@@ -11,36 +11,56 @@ function dbPull():array{
     $queryString = 'SELECT * FROM 
              `training_log` 
                  LIMIT 10;';
-    $query = $db->prepare($queryString); // "preparing" the query - not executed yet
-    $query->execute(); //executes the query and stores all the results
+    $query = $db->prepare($queryString);
+    $query->execute();
 
-    $allResults = $query->fetchAll(); //retrieving all the resulting rows as array
+    $allResults = $query->fetchAll();
     return $allResults;
 }
 
 function outputResults(){}
 
-function dateOutput($db_array, $date){
-    foreach($db_array as $db_item){
-        if ($db_item['date'] === $date){
-            echo exerciseOutput($db_array, $db_item['id']);
+function perDateOutput(array $db_array, array $date_array){
+    foreach($date_array as $date) {
+        foreach ($db_array as $db_item) {
+            if ($db_item['date'] === $date) {
+                echo exerciseOutput($db_array, $db_item['id']);
+            }
         }
     }
 }
 
-function exerciseOutput($db_array, $array_index):string{
-    $exercise_string = "<div class='exercise_container'><h3>" . $db_array[$array_index]['exercise'] . "</h3><p>" . $db_array[$array_index]['weight_added_kg'] . "</p><p>" . $db_array[$array_index]['comments'] . "</p></div>";
+function getAllDates($db_array):array{
+    $db_date_array = [];
+    foreach($db_array as $db_item){
+        $db_date_array[] = $db_item['date'];
+        $date_array = array_unique($db_date_array);
+    }
+    return $date_array;
+}
+
+
+function exerciseOutput(array $db_array, int $array_index):string{
+    $exercise = $db_array[$array_index]['exercise'];
+    $weight_added_kg = ($db_array[$array_index]['weight_added_kg']===null) ? '' : $db_array[$array_index]['weight_added_kg'];
+    $comments = ($db_array[$array_index]['comments']===null) ? '' : $db_array[$array_index]['comments'];
+
+    $exercise_string = "<div class='exercise_container'><h3> $exercise </h3><p> $weight_added_kg kg</p><p> $comments </p></div>";
 
     return $exercise_string;
 }
 
 $db_array = dbPull();
 //echo exerciseOutput($db_array, 1);
+$date_array = getAllDates($db_array);
+echo '<pre>';
+var_dump($date_array);
 
-$temp_date = $db_array;
+//$temp_date = $db_array[0]['date'];
+//echo  gettype($temp_date);
 
 
-dateOutput($db_array, );
+perDateOutput($db_array, $date_array);
 
 echo '<pre>';
 var_dump($db_array);
