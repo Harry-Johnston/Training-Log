@@ -70,5 +70,35 @@ function getAllDates(array $all_workouts_array):array{
     return array_unique($db_date_array);
 }
 
+ function fetchInput():array{
+    $fetch_array = [];
+    if (isset($_GET['date']) && isset($_GET['exercise'])){
+        $fetch_array['date'] = $_GET['date'];
+        $fetch_array['exercise'] = $_GET['exercise'];
+    }
+    $fetch_array['weight_added_kg'] = $_GET['weight_added_kg'] ?? null;
+    $fetch_array['comments'] = $_GET['comments'] ?? null;
+    return $fetch_array;
+}
+
+function insertInput($fetch_array){
+    $connectionString = 'mysql:host=db; dbname=training_diary';
+    $dbUsername = 'root';
+    $dbpassword = 'password';
+    $date = $fetch_array['date'];
+    $exercise = $fetch_array['exercise'];
+    $weight_added_kg = $fetch_array['weight_added_kg'];
+    $comments = $fetch_array['comments'];
+
+    $db = new PDO ($connectionString, $dbUsername, $dbpassword);
+
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+    $queryString = "INSERT INTO `training_log` (`date`, `exercise`, `weight_added_kg`, `comments`)
+        VALUES ('$date', '$exercise', '$weight_added_kg', '$comments')";
+
+    $query = $db->prepare($queryString);
+    $query->execute();
+}
 
 
