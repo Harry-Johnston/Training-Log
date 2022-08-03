@@ -1,6 +1,8 @@
 <?php require_once 'trainingFunction.php';
-$db_array = dbPull();
-$date_array = getAllDates($db_array);
+$all_workouts_array = dbPull();
+$date_array = getAllDates($all_workouts_array);
+$all_workouts_array = addHtmlToWorkouts($all_workouts_array);
+
 ?>
 <html lang = "en">
     <head>
@@ -22,7 +24,7 @@ $date_array = getAllDates($db_array);
             </div>
         </header>
         <main class="diary_container">
-            <?php echo perDateOutput($db_array, $date_array) ?>
+            <?php echo perDateOutput($all_workouts_array, $date_array) ?>
         </main>
     </body>
 </html>
