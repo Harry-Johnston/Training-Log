@@ -29,6 +29,9 @@ header {
 
 .nav_button{
     color: #FFFFFF;
+    border: #FFFFFF 1px solid;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .nav_bar {
