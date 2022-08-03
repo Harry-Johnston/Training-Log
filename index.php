@@ -2,7 +2,6 @@
 $all_workouts_array = pullAllWorkoutsFromDb();
 $date_array = getAllUniqueDates($all_workouts_array);
 $all_workouts_array = addHtmlToWorkouts($all_workouts_array);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
