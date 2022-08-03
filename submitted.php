@@ -1,7 +1,8 @@
 <?php
 
 ?>
-<html lang = "en">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <link rel="stylesheet" href="style.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="normalize.css">
@@ -18,7 +19,7 @@
             </nav>
             <div class="title_block">
                 <h1 class="title_logo">Chalk it up!</h1>
-                <h2 class="title_subheading">Your Submission was Successful</h2>
+                <p class="title_subheading">Your Submission was Successful</p>
             </div>
         </header>
         <main>

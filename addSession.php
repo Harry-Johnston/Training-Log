@@ -1,4 +1,4 @@
-<?php require_once 'trainingFunction.php';
+<?php require_once 'functions.php';
 $input_array = fetchInput();
 
 if (isset($input_array['date'])){
@@ -7,8 +7,8 @@ if (isset($input_array['date'])){
     header('Location: submitted.php');
 }
 ?>
-
-<html lang = "en">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <link rel="stylesheet" href="style.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="normalize.css">
@@ -24,7 +24,7 @@ if (isset($input_array['date'])){
             </nav>
             <div class="title_block">
                 <h1 class="title_logo">Chalk it up!</h1>
-                <h2 class="title_subheading">Add a session below:</h2>
+                <p class="title_subheading">Add a session below:</p>
             </div>
         </header>
         <main>

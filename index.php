@@ -1,10 +1,11 @@
-<?php require_once 'trainingFunction.php';
-$all_workouts_array = dbPull();
-$date_array = getAllDates($all_workouts_array);
+<?php require_once 'functions.php';
+$all_workouts_array = pullAllWorkoutsFromDb();
+$date_array = getAllUniqueDates($all_workouts_array);
 $all_workouts_array = addHtmlToWorkouts($all_workouts_array);
 
 ?>
-<html lang = "en">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <link rel="stylesheet" href="style.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="normalize.css">
@@ -20,11 +21,11 @@ $all_workouts_array = addHtmlToWorkouts($all_workouts_array);
             </nav>
             <div class="title_block">
                 <h1 class="title_logo">Chalk it up!</h1>
-                <h2 class="title_subheading">Check out your previous sessions below:</h2>
+                <p class="title_subheading">Check out your previous sessions below:</p>
             </div>
         </header>
         <main class="diary_container">
-            <?php echo perDateOutput($all_workouts_array, $date_array) ?>
+            <?php echo displayAllWorkouts($all_workouts_array, $date_array) ?>
         </main>
     </body>
 </html>
