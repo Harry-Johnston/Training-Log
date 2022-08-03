@@ -180,5 +180,7 @@ class testTrainingFunction extends TestCase {
         $this->assertEquals($expected, $result);
     }
 
+    public function testFetchInput(){
 
+    }
 }

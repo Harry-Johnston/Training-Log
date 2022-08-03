@@ -69,18 +69,18 @@ function getAllUniqueDates(array $all_workouts_array):array{
     return array_unique($db_date_array);
 }
 
- function fetchInput():array{
+ function getInputFromForm():array{
     $fetch_array = [];
-    if (isset($_GET['date']) && isset($_GET['exercise'])){
-        $fetch_array['date'] = $_GET['date'];
-        $fetch_array['exercise'] = $_GET['exercise'];
+    if (isset($_POST['date']) && isset($_POST['exercise'])){
+        $fetch_array['date'] = $_POST['date'];
+        $fetch_array['exercise'] = $_POST['exercise'];
     }
-    $fetch_array['weight_added_kg'] = $_GET['weight_added_kg'] ?? null;
-    $fetch_array['comments'] = $_GET['comments'] ?? null;
+    $fetch_array['weight_added_kg'] = $_POST['weight_added_kg'] ?? null;
+    $fetch_array['comments'] = $_POST['comments'] ?? null;
     return $fetch_array;
 }
 
-function insertInput($fetch_array){
+function insertInputintoDb($fetch_array){
     $connectionString = 'mysql:host=db; dbname=training_diary';
     $dbUsername = 'root';
     $dbpassword = 'password';

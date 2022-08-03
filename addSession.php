@@ -1,8 +1,14 @@
 <?php require_once 'functions.php';
-$input_array = fetchInput();
+$fetch_array = [];
+if (isset($_POST['date']) && isset($_POST['exercise'])) {
+    $fetch_array['date'] = $_POST['date'];
+    $fetch_array['exercise'] = $_POST['exercise'];
+}
+$fetch_array['weight_added_kg'] = $_POST['weight_added_kg'] ?? null;
+$fetch_array['comments'] = $_POST['comments'] ?? null;
 
 if (isset($input_array['date'])){
-    insertInput($input_array);
+    insertInputintoDb($input_array);
     echo 'its working i think?';
     header('Location: submitted.php');
 }
@@ -28,7 +34,7 @@ if (isset($input_array['date'])){
             </div>
         </header>
         <main>
-            <form class="input_form" action="addSession.php" method="get">
+            <form class="input_form" action="addSession.php" method="post">
                 <p><input type="date" name="date" placeholder="Date" required></p>
                 <p><input type="text" name="exercise" placeholder="Exercise" required></p>
                 <p><input type="number" name="weight_added_kg" placeholder="Weight Added (kg)"></p>
