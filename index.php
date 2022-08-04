@@ -6,8 +6,8 @@ $all_workouts_array = addHtmlToWorkouts($all_workouts_array);
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="style.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="normalize.css">
+        <link rel="stylesheet" href="style.css" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
