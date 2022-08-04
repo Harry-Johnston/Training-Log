@@ -22,7 +22,15 @@ a {
     color: #FFFFFF;
     background-color: #7351e2;
     border-radius: 10px;
-    border: 3px #bc51e2 solid;
+    padding: 10px;
+
+    border-right: 7px solid #4821c6;
+    border-bottom: 7px solid #4821c6;
+    top: 0;
+    left: 0;
+    right: -30px;
+    bottom: -30px;
+    margin: 10px 30px;
 }
 
 header {
@@ -34,16 +42,16 @@ header {
     border: #FFFFFF 1px solid;
     border-radius: 10px;
     padding: 5px;
-    background-color: #bc51e2;
+    background-color: #7351e2;
 }
 
 .nav_button:hover {
-    background-color: #7351e2;
+    background-color: #a893ed;
     transition: background-color 0.4s, color 0.4s;
 }
 
 .nav_bar {
-    padding: 10px;
+    padding: 30px 20px 5px 20px;
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     text-decoration: none;
@@ -58,6 +66,10 @@ header {
 
 .title_logo{
     font-size: 5rem;
+}
+
+.title_subheading {
+    font-weight: bold;
 }
 
 .diary_container {
@@ -80,7 +92,7 @@ header {
 .date_container {
     border: black solid 1px;
     margin: 10px;
-    padding: 10px;
+    padding: 0 20px 20px 20px;
     width: 500px;
     border-radius: 40px;
     background-color: #e9e3f4;

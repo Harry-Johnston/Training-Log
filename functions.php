@@ -1,6 +1,7 @@
 <?php
 
-function pullAllWorkoutsFromDb():array{
+function pullAllWorkoutsFromDb(): array
+{
     $connectionString = 'mysql:host=db; dbname=training_diary';
     $dbUsername = 'root';
     $dbpassword = 'password';
@@ -8,7 +9,7 @@ function pullAllWorkoutsFromDb():array{
 
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $queryString = 'SELECT * FROM 
+    $queryString = 'SELECT `date`, `exercise`, `weight_added_kg` FROM 
              `workouts`
                  ORDER BY `date` DESC';
     $query = $db->prepare($queryString);
@@ -16,7 +17,8 @@ function pullAllWorkoutsFromDb():array{
     return $query->fetchAll();
 }
 
-function addHtmlToWorkouts(array $all_workouts_array):array{
+function addHtmlToWorkouts(array $all_workouts_array): array
+{
     foreach ($all_workouts_array as $key=>$workout_item){
         if (!is_array($workout_item) ||
             !array_key_exists('date', $workout_item) ||
@@ -33,7 +35,8 @@ function addHtmlToWorkouts(array $all_workouts_array):array{
     return $all_workouts_array;
 }
 
-function displayAllWorkouts(array $all_workouts_array, array $date_array):string{
+function displayAllWorkouts(array $all_workouts_array, array $date_array): string
+{
      $output_string = '';
     foreach($date_array as $date) {
         $per_date_string = "<div class='date_container'><h2 class='date_text'>$date</h2>";
@@ -57,7 +60,8 @@ function displayAllWorkouts(array $all_workouts_array, array $date_array):string
     return $output_string;
 }
 
-function getAllUniqueDates(array $all_workouts_array):array{
+function getAllUniqueDates(array $all_workouts_array): array
+{
     $db_date_array = [];
     foreach($all_workouts_array as $workout){
         if (!is_array($workout) ||
@@ -69,7 +73,8 @@ function getAllUniqueDates(array $all_workouts_array):array{
     return array_unique($db_date_array);
 }
 
-function insertInputintoDb($fetch_array){
+function insertInputintoDb($fetch_array)
+{
     $connectionString = 'mysql:host=db; dbname=training_diary';
     $dbUsername = 'root';
     $dbpassword = 'password';
