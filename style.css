@@ -150,6 +150,10 @@ header {
         max-width: 300px;
     }
 
+    .form_box {
+        max-width: 400px;
+    }
+
     html {
         font-size: 12px;
     }
