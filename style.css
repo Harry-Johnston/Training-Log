@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title_logo {
+    font-size: 3rem;
+    font-family: 'Mouse Memoirs', sans-serif;
+    color: #FFFFFF;
+}
+
+header {
+    background-color: #A893ED;
+}
+
+.nav_button{
+    color: #FFFFFF;
+    border: #FFFFFF 1px solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.nav_bar {
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.title_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: solid #000000 5px;
+}
+
+.title_logo{
+    font-size: 5rem;
+}
+
+.diary_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 150px;
+}
+
+.date_text{
+    font-size: 2rem;
+    border-bottom: 1px black solid;
+    text-align: center;
+}
+
+.weight_added_span{
+    font-weight: 100;
+}
+
+.date_container {
+    border: black solid 1px;
+    margin: 10px;
+    padding: 10px;
+    width: 500px;
+    border-radius: 40px;
+    background-color: #E9E3F4;
+}
