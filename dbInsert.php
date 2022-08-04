@@ -8,5 +8,3 @@ $fetch_array['weight_added_kg'] = $_POST['weight_added_kg'] ?? null;
 $fetch_array['comments'] = $_POST['comments'] ?? null;
 insertInputintoDb($fetch_array);
 header('Location: submitted.php');
-
-

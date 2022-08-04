@@ -20,6 +20,9 @@ a {
     font-size: 3rem;
     font-family: 'Mouse Memoirs', sans-serif;
     color: #FFFFFF;
+    background-color: #7351e2;
+    border-radius: 10px;
+    border: 3px #bc51e2 solid;
 }
 
 header {
@@ -31,6 +34,7 @@ header {
     border: #FFFFFF 1px solid;
     border-radius: 10px;
     padding: 5px;
+    background-color: #bc51e2;
 }
 
 .nav_button:hover {
@@ -114,4 +118,8 @@ header {
 .back_button:hover {
     background-color: #a893ed;
     transition: background-color 0.4s, color 0.4s;
+}
+
+.comments_label {
+    display: none;
 }
