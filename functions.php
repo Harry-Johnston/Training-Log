@@ -82,11 +82,11 @@ function insertInputintoDb($fetch_array){
 
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $queryString = "INSERT INTO `workouts` (`date`, `exercise`, `weight_added_kg`, `comments`)
-        VALUES ('$date', '$exercise', '$weight_added_kg', '$comments')";
+    $queryString = 'INSERT INTO `workouts` (`date`, `exercise`, `weight_added_kg`, `comments`)
+        VALUES (:date, :exercise, :weight_added_kg, :comments)';
 
     $query = $db->prepare($queryString);
-    $query->execute();
+    $query->execute(['date'=> $date, 'exercise'=> $exercise, 'weight_added_kg'=> $weight_added_kg, 'comments'=> $comments]);
 }
 
 
