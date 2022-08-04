@@ -19,7 +19,7 @@ function pullAllWorkoutsFromDb(): array
 
 function addHtmlToWorkouts(array $all_workouts_array): array
 {
-    foreach ($all_workouts_array as $key=>$workout_item){
+    foreach ($all_workouts_array as $key=>$workout_item) {
         if (
             !is_array($workout_item) ||
             !array_key_exists('date', $workout_item) ||
@@ -30,8 +30,8 @@ function addHtmlToWorkouts(array $all_workouts_array): array
             return [];
         }
         $exercise = $workout_item['exercise'];
-        $weight_added_kg = ($workout_item['weight_added_kg']===null) ? 0 : $workout_item['weight_added_kg'];
-        $comments = ($workout_item['comments']===null) ? '' : '<p>' . $workout_item['comments'] . '</p>' ;
+        $weight_added_kg = ($workout_item['weight_added_kg'] === null) ? 0 : $workout_item['weight_added_kg'];
+        $comments = ($workout_item['comments'] === null) ? '' : '<p>' . $workout_item['comments'] . '</p>' ;
         $all_workouts_array[$key]['html'] = "<div class='exercise_container'><h3> $exercise <span class='weight_added_span'> | " . $weight_added_kg . "kg Added </span></h3>$comments</div>";
     }
     return $all_workouts_array;
@@ -40,7 +40,7 @@ function addHtmlToWorkouts(array $all_workouts_array): array
 function displayAllWorkouts(array $all_workouts_array, array $date_array): string
 {
     $output_string = '';
-    foreach($date_array as $date) {
+    foreach ($date_array as $date) {
         $per_date_string = "<div class='date_container'><h2 class='date_text'>$date</h2>";
         foreach ($all_workouts_array as $workout_item) {
             if (
@@ -67,7 +67,7 @@ function displayAllWorkouts(array $all_workouts_array, array $date_array): strin
 function getAllUniqueDates(array $all_workouts_array): array
 {
     $db_date_array = [];
-    foreach($all_workouts_array as $workout){
+    foreach ($all_workouts_array as $workout) {
         if (
             !is_array($workout) ||
             !array_key_exists('date', $workout)
@@ -99,6 +99,3 @@ function insertInputintoDb($fetch_array)
     $query = $db->prepare($queryString);
     $query->execute(['date'=> $date, 'exercise'=> $exercise, 'weight_added_kg'=> $weight_added_kg, 'comments'=> $comments]);
 }
-
-
-
