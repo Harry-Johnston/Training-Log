@@ -3,7 +3,8 @@ require '../functions.php';
 use PHPUnit\Framework\TestCase;
 class testTrainingFunction extends TestCase {
 
-    public function testGetAllUniqueDatesSuccess_getDates(){
+    public function testGetAllUniqueDatesSuccess_getDates()
+    {
         $all_workouts_array = [
                 [
                     'date'=>'2022-07-10',
@@ -25,7 +26,8 @@ class testTrainingFunction extends TestCase {
         $this->assertEquals($expected, $result);
     }
 
-    public function testGetAllUniqueDatesSuccess_removeDuplicates(){
+    public function testGetAllUniqueDatesSuccess_removeDuplicates()
+    {
         $all_workouts_array = [
             [
                 'date'=>'2022-07-10',
@@ -47,7 +49,8 @@ class testTrainingFunction extends TestCase {
         $this->assertEquals($expected, $result);
     }
 
-    public function testGetAllUniqueDatesFailure(){ //if the array does not have ['date'] keys, an empty string will be output
+    public function testGetAllUniqueDatesFailure()
+    { //if the array does not have ['date'] keys, an empty string will be output
         $all_workouts_array = [
             [
                 'exercise'=>'Max Hang',
@@ -67,7 +70,8 @@ class testTrainingFunction extends TestCase {
         $this->assertEquals($expected, $result);
     }
 
-    public function testAddHtmlToWorkoutsSuccess(){
+    public function testAddHtmlToWorkoutsSuccess()
+    {
         $all_workouts_array = [
             [
                 'date'=>'2022-07-10',
@@ -106,7 +110,8 @@ class testTrainingFunction extends TestCase {
         $this->assertEquals($expected, $result);
     }
 
-    public function testAddHtmlToWorkoutsFailure(){ //if the array does not have all the keys, an empty string will be output -> here the ['date'] is missing
+    public function testAddHtmlToWorkoutsFailure()
+    { //if the array does not have all the keys, an empty string will be output -> here the ['date'] is missing
         $all_workouts_array = [
             [
                 'exercise'=>'Max Hang',
@@ -126,7 +131,8 @@ class testTrainingFunction extends TestCase {
         $this->assertEquals($expected, $result);
     }
 
-    public function testDisplayAllWorkoutsSuccess(){
+    public function testDisplayAllWorkoutsSuccess()
+    {
         $all_workouts_array = [
             [
                 'date'=>'2022-07-10',
@@ -154,7 +160,8 @@ class testTrainingFunction extends TestCase {
         $this->assertEquals($expected, $result);
     }
 
-    public function testDisplayAllWorkoutsFailure(){ //if the array does not have all the keys, an empty string will be output -> here the ['date'] is missing
+    public function testDisplayAllWorkoutsFailure()
+    { //if the array does not have all the keys, an empty string will be output -> here the ['date'] is missing
         $all_workouts_array = [
             [
                 'exercise'=>'Max Hang',

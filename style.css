@@ -20,12 +20,12 @@ a {
     font-size: 3rem;
     font-family: 'Mouse Memoirs', sans-serif;
     color: #FFFFFF;
-    background-color: #7351e2;
+    background-color: #7351E2;
     border-radius: 10px;
     padding: 10px;
 
-    border-right: 7px solid #4821c6;
-    border-bottom: 7px solid #4821c6;
+    border-right: 7px solid #4821C6;
+    border-bottom: 7px solid #4821C6;
     top: 0;
     left: 0;
     right: -30px;
@@ -34,7 +34,7 @@ a {
 }
 
 header {
-    background-color: #a893ed;
+    background-color: #A893ED;
 }
 
 .nav_button{
@@ -42,15 +42,16 @@ header {
     border: #FFFFFF 1px solid;
     border-radius: 10px;
     padding: 5px;
-    background-color: #7351e2;
+    background-color: #7351E2;
 }
 
 .nav_button:hover {
-    background-color: #a893ed;
+    background-color: #A893ED;
     transition: background-color 0.4s, color 0.4s;
 }
 
 .nav_bar {
+    position: absolute;
     padding: 30px 20px 5px 20px;
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
@@ -61,7 +62,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: solid black 5px;
+    border-bottom: solid #000000 5px;
 }
 
 .title_logo{
@@ -81,8 +82,9 @@ header {
 
 .date_text{
     font-size: 2rem;
-    border-bottom: 1px black solid;
+    border-bottom: 1px #000000 solid;
     text-align: center;
+    margin: 10px 0;
 }
 
 .weight_added_span{
@@ -90,21 +92,24 @@ header {
 }
 
 .date_container {
-    border: black solid 1px;
+    border: #000000 solid 1px;
     margin: 10px;
     padding: 0 20px 20px 20px;
     width: 500px;
     border-radius: 40px;
-    background-color: #e9e3f4;
+    background-color: #E9E3F4;
 }
 
 .form_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 10px 150px;
-    border: black solid 1px;
+    border: #000000 solid 1px;
     padding: 10px;
     width: 500px;
     border-radius: 40px;
-    background-color: #e9e3f4;
+    background-color: #E9E3F4;
 }
 
 .form_container {
@@ -122,16 +127,34 @@ header {
 .back_button {
     margin: 200px 0;
     color: #000000;
-    border: black solid 1px;
+    border: #000000 solid 1px;
     padding: 10px;
     border-radius: 10px;
 }
 
 .back_button:hover {
-    background-color: #a893ed;
+    background-color: #A893ED;
     transition: background-color 0.4s, color 0.4s;
 }
 
 .comments_label {
     display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .nav_bar {
+        position: static;
+    }
+
+    .date_container {
+        max-width: 300px;
+    }
+
+    html {
+        font-size: 12px;
+    }
+
+    main {
+        padding: 0 10px;
+    }
 }
