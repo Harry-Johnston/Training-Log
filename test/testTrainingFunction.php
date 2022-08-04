@@ -186,5 +186,4 @@ class testTrainingFunction extends TestCase
         $expected = '';
         $this->assertEquals($expected, $result);
     }
-
 }
