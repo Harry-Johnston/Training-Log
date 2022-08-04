@@ -1,6 +1,7 @@
 <?php
 
-function pullAllWorkoutsFromDb():array{
+function pullAllWorkoutsFromDb(): array
+{
     $connectionString = 'mysql:host=db; dbname=training_diary';
     $dbUsername = 'root';
     $dbpassword = 'password';
@@ -8,7 +9,7 @@ function pullAllWorkoutsFromDb():array{
 
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $queryString = 'SELECT * FROM 
+    $queryString = 'SELECT `date`, `exercise`, `weight_added_kg`, `comments` FROM 
              `workouts`
                  ORDER BY `date` DESC';
     $query = $db->prepare($queryString);
@@ -16,13 +17,16 @@ function pullAllWorkoutsFromDb():array{
     return $query->fetchAll();
 }
 
-function addHtmlToWorkouts(array $all_workouts_array):array{
+function addHtmlToWorkouts(array $all_workouts_array): array
+{
     foreach ($all_workouts_array as $key=>$workout_item){
-        if (!is_array($workout_item) ||
+        if (
+            !is_array($workout_item) ||
             !array_key_exists('date', $workout_item) ||
             !array_key_exists('exercise', $workout_item) ||
             !array_key_exists('weight_added_kg', $workout_item) ||
-            !array_key_exists('comments', $workout_item)) {
+            !array_key_exists('comments', $workout_item)
+        ) {
             return [];
         }
         $exercise = $workout_item['exercise'];
@@ -33,14 +37,17 @@ function addHtmlToWorkouts(array $all_workouts_array):array{
     return $all_workouts_array;
 }
 
-function displayAllWorkouts(array $all_workouts_array, array $date_array):string{
-     $output_string = '';
+function displayAllWorkouts(array $all_workouts_array, array $date_array): string
+{
+    $output_string = '';
     foreach($date_array as $date) {
         $per_date_string = "<div class='date_container'><h2 class='date_text'>$date</h2>";
         foreach ($all_workouts_array as $workout_item) {
-            if (!is_array($workout_item) ||
+            if (
+                !is_array($workout_item) ||
                 !array_key_exists('date', $workout_item) ||
-                !array_key_exists('html', $workout_item)){
+                !array_key_exists('html', $workout_item)
+            ) {
                 return '';
             }
             if ($workout_item['date'] === $date) {
@@ -57,11 +64,14 @@ function displayAllWorkouts(array $all_workouts_array, array $date_array):string
     return $output_string;
 }
 
-function getAllUniqueDates(array $all_workouts_array):array{
+function getAllUniqueDates(array $all_workouts_array): array
+{
     $db_date_array = [];
     foreach($all_workouts_array as $workout){
-        if (!is_array($workout) ||
-            !array_key_exists('date', $workout)){
+        if (
+            !is_array($workout) ||
+            !array_key_exists('date', $workout)
+        ) {
             return [];
         }
         $db_date_array[] = $workout['date'];
