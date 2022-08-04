@@ -1,8 +1,8 @@
 <?php
 require '../functions.php';
 use PHPUnit\Framework\TestCase;
-class testTrainingFunction extends TestCase {
-
+class testTrainingFunction extends TestCase
+{
     public function testGetAllUniqueDatesSuccess_getDates()
     {
         $all_workouts_array = [
