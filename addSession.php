@@ -34,7 +34,7 @@
                         <input type="number" name="weight_added_kg" id="weight_added_kg" placeholder="(kg)">
                     </p>
                     <p>
-                        <label for="comments">Comments</label>
+                        <label for="comments" class="comments_label">Comments</label>
                         <textarea rows = "6" cols = "45" name = "comments" id="comments" placeholder="How did it feel?"></textarea>
                     </p>
                     <p>
