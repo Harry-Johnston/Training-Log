@@ -19,11 +19,13 @@
             </nav>
             <div class="title_block">
                 <h1 class="title_logo">Chalk it up!</h1>
-                <p class="title_subheading">Your Submission was Successful</p>
             </div>
         </header>
         <main>
-            <a href="./addSession.php" class="back_button">Go Back!</a>
+            <div class="back_button_container">
+                <p class="title_subheading">Your Submission was Successful</p>
+                <a href="./addSession.php" class="back_button">Go Back!</a>
+            </div>
         </main>
     </body>
 </html>

@@ -1,18 +1,4 @@
-<?php require_once 'functions.php';
-$fetch_array = [];
-if (isset($_POST['date']) && isset($_POST['exercise'])) {
-    $fetch_array['date'] = $_POST['date'];
-    $fetch_array['exercise'] = $_POST['exercise'];
-}
-$fetch_array['weight_added_kg'] = $_POST['weight_added_kg'] ?? null;
-$fetch_array['comments'] = $_POST['comments'] ?? null;
 
-if (isset($input_array['date'])){
-    insertInputintoDb($input_array);
-    echo 'its working i think?';
-    header('Location: submitted.php');
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -33,14 +19,16 @@ if (isset($input_array['date'])){
                 <p class="title_subheading">Add a session below:</p>
             </div>
         </header>
-        <main>
-            <form class="input_form" action="addSession.php" method="post">
-                <p><input type="date" name="date" placeholder="Date" required></p>
-                <p><input type="text" name="exercise" placeholder="Exercise" required></p>
-                <p><input type="number" name="weight_added_kg" placeholder="Weight Added (kg)"></p>
-                <p><textarea rows = "6" cols = "45" name = "comments" placeholder="Any Comments?"></textarea></p>
-                <p><input type="submit" value="Submit"></p>
-            </form>
+        <main class="form_container">
+            <div class="form_box">
+                <form class="input_form" action='dbInsert.php' method="post">
+                    <p>Date of Session: <input type="date" name="date" required></p>
+                    <p>Exercise Name: <input type="text" name="exercise" required></p>
+                    <p>Weight Added: <input type="number" name="weight_added_kg" placeholder="(kg)"></p>
+                    <p><textarea rows = "6" cols = "45" name = "comments" placeholder="How did it feel?"></textarea></p>
+                    <p><input type="submit" value="Submit"></p>
+                </form>
+            </div>
         </main>
     </body>
 </html>
