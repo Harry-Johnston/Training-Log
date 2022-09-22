@@ -7,6 +7,10 @@ The app groups entries by date before displaying them since one day may have mul
 
 In addition I would love to add a login system to allow multiple users to store their training logs simultaneously so I can share it with my climbing buddies.
 
+## Live Version
+
+https://2022-harryj.dev.io-academy.uk/Training-Log/
+
 ## Dependencies
 ```
 - PHP version 7.4.30
