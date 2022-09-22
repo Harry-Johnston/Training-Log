@@ -22,7 +22,6 @@ Clone this repo:
 Install the database `training_diary_2022-08-01.sql` into a db named 'training_diary'
 
 Ensure your local database host, username and password details are correct in: 
-```
   
 Providing you're running the PHP server, the application will now be available, bask in the coolness!
 
