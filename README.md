@@ -27,8 +27,7 @@ Install the database `training_diary_2022-08-01.sql` into a db named 'training_d
 
 Ensure your local database host, username and password details are correct in: 
   
-Providing you're running the PHP server, the application will now be available, bask in the coolness!
-
+The application will now be up and running, You'd best get training hard so you can log some sessions!
 ### Created by:
 
 - Harry Johnston [@Harry-Johnston](https://github.com/Harry-Johnston)
